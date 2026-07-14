@@ -13,5 +13,12 @@ group by customer_id, tip
 having total > 30 or tip > 5
 order by tip desc;
 
+#Example of using an aggregate function in a having clause
+select customer_id, sum(order_total) as total
+from customer_orders
+group by customer_id
+having sum(order_total) > 15
+order by 2 desc;
+
 select customer_id, order_total, tip
 from customer_orders;
